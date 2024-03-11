@@ -56,13 +56,7 @@ class AndroidSignalStrengthModule(private val reactContext: ReactApplicationCont
       signalStrength.cdmaDbm
     }
     // Map the signal strength value to a level manually
-    return when {
-      signalStrengthValue >= -70 -> 4
-      signalStrengthValue >= -85 -> 3
-      signalStrengthValue >= -100 -> 2
-      signalStrengthValue >= -110 -> 1
-      else -> 0
-    }
+    return signalStrengthValue
   }
 
   companion object {
